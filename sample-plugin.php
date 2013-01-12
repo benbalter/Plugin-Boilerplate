@@ -2,13 +2,13 @@
 /*
 Plugin Name: Hello Dolly 2 - Plugin Boilerplate Sample
 Description: This is not just a plugin, it symbolizes the hope and enthusiasm of the next generation. When activated you will randomly see a lyric from Hello, Dolly in the upper right of your admin screen on every page.
-Version: 1.0
+Version: 2.0
 Author: Benjamin J. Balter
 Author URI: http://ben.balter.com
 License: GPL3
 */
 
-/*  Copyright 2012  Benjamin J. Balter  ( ben@balter.com | http://ben.balter.com )
+/*  Copyright 2012-2013  Benjamin J. Balter  ( ben@balter.com | http://ben.balter.com )
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -23,17 +23,17 @@ License: GPL3
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- *  @copyright 2011-2012
+ *  @copyright 2011-2013
  *  @license GPL v3
- *  @version 1.0
+ *  @version 2.0
  *  @package Plugin Boilerplate
  *  @subpackage Hello_Dolly2
  *  @author Benjamin J. Balter <ben@balter.com>
  */
 
-require_once dirname( __FILE__ ) . '/includes/class.plugin-boilerplate.php';
+require_once dirname( __FILE__ ) . '/includes/boilerplate/class.plugin-boilerplate.php';
 
-class Hello_Dolly2 extends Plugin_Boilerplate_v_1 {
+class Hello_Dolly2 extends Plugin_Boilerplate_v_2 {
 
 	static $instance;
 	public $name      = 'Hello Dolly 2.0'; //Human-readable name of plugin

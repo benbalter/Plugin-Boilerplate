@@ -1,0 +1,3 @@
+[submodule "includes/boilerplate"]
+	path = includes/boilerplate
+	url = https://github.com/benbalter/wordpress-plugin-boilerplate-classes
