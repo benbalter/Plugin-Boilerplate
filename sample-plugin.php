@@ -48,12 +48,12 @@ class Hello_Dolly2 extends Plugin_Boilerplate_v_2 {
 	 */
 	function __construct() {
 
-		self::$instance = &$this;
+		self::$instance = $this;
 		$this->directory = dirname( __FILE__ );
 		parent::__construct( $this );
 
-		add_action( 'admin_menu', array( &$this, 'options_menu_init' ) );
-		add_action( 'admin_init', array( &$this, 'register_setting' ) );
+		add_action( 'admin_menu', array( $this, 'options_menu_init' ) );
+		add_action( 'admin_init', array( $this, 'register_setting' ) );
 
 	}
 
@@ -62,7 +62,7 @@ class Hello_Dolly2 extends Plugin_Boilerplate_v_2 {
 	 * Register our option with WordPress
 	 */
 	function register_setting() {
-		register_setting( $this->slug_, $this->slug_, array( &$this, 'options_validate' ) );
+		register_setting( $this->slug_, $this->slug_, array( $this, 'options_validate' ) );
 	}
 
 
@@ -70,7 +70,7 @@ class Hello_Dolly2 extends Plugin_Boilerplate_v_2 {
 	 * Register our menu with WordPress
 	 */
 	function options_menu_init() {
-		add_options_page( __( 'Hello Dolly Lyrics' ), __( 'Hello Dolly Lyrics' ), 'manage_options', 'hd2_options', array( &$this, 'options' ) );
+		add_options_page( __( 'Hello Dolly Lyrics' ), __( 'Hello Dolly Lyrics' ), 'manage_options', 'hd2_options', array( $this, 'options' ) );
 	}
 
 
