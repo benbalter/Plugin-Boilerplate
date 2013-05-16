@@ -50,7 +50,7 @@ class Hello_Dolly2 extends Plugin_Boilerplate_v_2 {
 
 		self::$instance = &$this;
 		$this->directory = dirname( __FILE__ );
-		parent::__construct( &$this );
+		parent::__construct( $this );
 
 		add_action( 'admin_menu', array( &$this, 'options_menu_init' ) );
 		add_action( 'admin_init', array( &$this, 'register_setting' ) );

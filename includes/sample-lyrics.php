@@ -90,7 +90,7 @@ class Hello_Dolly2_Sample_Lyrics {
 	 */
 	function get_lyrics() {
 		$lyrics = $this->parent->options->lyrics;
-		array_walk( &$lyrics, 'wptexturize' );
+		array_walk( $lyrics, 'wptexturize' );
 		return $lyrics;
 	}
 
