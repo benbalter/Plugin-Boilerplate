@@ -15,9 +15,9 @@ class Hello_Dolly2_Sample_Lyrics {
 	 * Init Default Lyrics and register with WordPress API
 	 * @param class $parent (reference) the Parent Class
 	 */
-	function __construct( &$parent ) {
+	function __construct( $parent ) {
 
-		$this->parent = &$parent;
+		$this->parent = $parent;
 
 		$this->lyrics = array (
 			__( "Hello, Dolly" ),
@@ -50,12 +50,12 @@ class Hello_Dolly2_Sample_Lyrics {
 			__( "Dolly'll never go away again" ),
 		);
 
-		add_action( 'hd2_options_init', array( &$this, 'options_init' ) );
-		add_filter( $this->parent->prefix . 'lyric', array( &$this, 'add_p_tag' ) );
-		add_action( 'admin_notices', array( &$this, 'lyric' ) );
-		add_action( 'admin_head', array( &$this, 'css' ) );
-		add_action( 'admin_init', array( &$this, 'js_lyrics' ) );
-		add_action( 'admin_init', array( &$this, 'reset_lyrics' ) );
+		add_action( 'hd2_options_init', array( $this, 'options_init' ) );
+		add_filter( $this->parent->prefix . 'lyric', array( $this, 'add_p_tag' ) );
+		add_action( 'admin_notices', array( $this, 'lyric' ) );
+		add_action( 'admin_head', array( $this, 'css' ) );
+		add_action( 'admin_init', array( $this, 'js_lyrics' ) );
+		add_action( 'admin_init', array( $this, 'reset_lyrics' ) );
 	}
 
 
@@ -64,7 +64,7 @@ class Hello_Dolly2_Sample_Lyrics {
 	 */
 	function options_init() {
 
-		$this->parent->options->defaults = array( 'lyrics' => &$this->lyrics );
+		$this->parent->options->defaults = array( 'lyrics' => $this->lyrics );
 
 	}
 
@@ -90,7 +90,7 @@ class Hello_Dolly2_Sample_Lyrics {
 	 */
 	function get_lyrics() {
 		$lyrics = $this->parent->options->lyrics;
-		array_walk( &$lyrics, 'wptexturize' );
+		array_walk( $lyrics, 'wptexturize' );
 		return $lyrics;
 	}
 
